@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farmer Registration - FarmFusion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-box register-box">
+            <div class="auth-header">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+                <div class="auth-brand">
+                    <i class="fas fa-leaf"></i>
+                    <span>FarmFusion</span>
+                </div>
+                <h2>Farmer Registration</h2>
+                <p>Join our community of farmers</p>
+            </div>
+
+            <form id="farmerRegisterForm" class="auth-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit phone number"
+                            pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+
+                <div class="form-group password-field-container">
+                    <label for="password">Password *</label>
+                    <div class="input-group password-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required
+                            minlength="6" />
+                        <button type="button" class="password-toggle" onclick="togglePassword(this)">
+                            <i class="fas fa-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="state">State *</label>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="state" name="state" required>
+                                <option value="">Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="district">District *</label>
+                        <div class="input-group">
+                            <i class="fas fa-map-pin"></i>
+                            <input type="text" id="district" name="district" placeholder="Enter district" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="farmSize">Farm Size (in acres) *</label>
+                    <div class="input-group">
+                        <i class="fas fa-chart-area"></i>
+                        <input type="number" id="farmSize" name="farmSize" placeholder="Enter farm size" min="0.1"
+                            step="0.1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="crops">Main Crops Grown *</label>
+                    <div class="input-group">
+                        <i class="fas fa-seedling"></i>
+                        <input type="text" id="crops" name="crops" placeholder="e.g., Wheat, Rice, Cotton" required>
+                    </div>
+                    <small>Separate multiple crops with commas</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-user-plus"></i> Register as Farmer
+                </button>
+
+                <div class="form-divider">
+                    <span>Already have an account?</span>
+                </div>
+
+                <a href="login.html" class="btn btn-outline btn-full">Login</a>
+            </form>
+
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+</body>
+
+</html>
